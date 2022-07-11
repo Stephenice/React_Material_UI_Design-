@@ -1,5 +1,21 @@
+import { Sidebar } from "./components/Sidebar";
+import { Feed } from "./components/Feed";
+import { Rightbar } from "./components/Rightbar";
+import { Navbar } from "./components/Navbar";
+import { Box } from "@mui/system";
+import { Stack } from "@mui/material";
+
 function App() {
-  return <div className="App">hello</div>;
+  return (
+    <Box>
+      <Navbar />
+      <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
+    </Box>
+  );
 }
 
 export default App;
