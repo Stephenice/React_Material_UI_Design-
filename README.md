@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# React Material-UI website
 
 This website is responsive react website built with Material-UI along with lots of Material-UI Components like MUI Layouts (Box, Container, Grid, Stack), typography, App bar, cards, tooltip, font icons, color schemes, dark mode and many other integrated plugins.
 
