@@ -1,15 +1,17 @@
-import { Facebook, Mail, Notifications, Pets } from "@mui/icons-material";
+import { Mail, Notifications, Pets } from "@mui/icons-material";
 import {
   AppBar,
   Avatar,
   Badge,
   Box,
   InputBase,
+  Menu,
+  MenuItem,
+  styled,
   Toolbar,
   Typography,
-  styled,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -40,40 +42,59 @@ const UserBox = styled(Box)(({ theme }) => ({
     display: "none",
   },
 }));
-
-export const Navbar = () => {
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          Logo
+          DEV UI
         </Typography>
-        <Facebook sx={{ display: { xs: "block", sm: "none" } }} />
+        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
-          <InputBase placeholder="search ..." />
+          <InputBase placeholder="search..." />
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
             <Mail />
           </Badge>
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={2} color="error">
             <Notifications />
           </Badge>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            alt="Remy Sharp"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
-        <UserBox>
+        <UserBox onClick={(e) => setOpen(true)}>
           <Avatar
             sx={{ width: 30, height: 30 }}
-            alt="Remy Sharp"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
-          <Typography variant="span">Joe</Typography>
+          <Typography variant="span">John</Typography>
         </UserBox>
       </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 };
+
+export default Navbar;
