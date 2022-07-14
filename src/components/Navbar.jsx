@@ -1,4 +1,4 @@
-import { Mail, Notifications, Pets } from "@mui/icons-material";
+import { Facebook, Mail, Notifications, Pets } from "@mui/icons-material";
 import {
   AppBar,
   Avatar,
@@ -50,7 +50,7 @@ const Navbar = () => {
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           STEPHEN UI
         </Typography>
-        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+        <Facebook sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
           <InputBase placeholder="search..." />
         </Search>
